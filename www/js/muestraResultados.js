@@ -18,7 +18,7 @@ var muestraResultados = {
 
 
     throwUsersList:function(tx) {
-        var sql = "SELECT * FROM usuarios";
+        var sql = "SELECT * FROM usuarios ORDER BY id DESC";
         tx.executeSql(
             sql,
             [],
@@ -28,24 +28,31 @@ var muestraResultados = {
     },
 
 
-
+    /*Generamos el hmtl de cada fila y lo insertamos en cada lista*/
     showUserList:function(tx, result){
         if(result.rows.length > 0)
         {
 
-            var html = '';
+            var htmlLasts = '';
+            var htmlRest = '';
             for(var i=0; i<result.rows.length; i++)
             {
                 var item = result.rows.item(i);
-                html += '<li>\
+                var html = '<li>\
                     <a data-transition="slide" href="profile.html" data-ajax="false" class="linkToProfile" data-id="'+item.id+'">\
                         <img src="'+item.img+'"  class="ui-thumbnail ui-thumbnail-circular" />\
                         <h2>'+item.nombre+'</h2>\
                         <p>'+item.puesto+'</p>\
                     </a>\
                  </li>';
-                $('#UsersList').html('<ul data-role="listview" data-icon="false" id="UsersList">'+html+'</ul><hr/>').enhanceWithin();
 
+                /*Separamos entre mas recientes y menos*/
+                if(item.ultimos == 1)
+                    htmlLasts += html;
+                else
+                    htmlRest += html;
+                $('#lastsAdded').html('<ul data-role="listview" data-icon="false" id="UsersList">'+htmlLasts+'</ul><hr/>').enhanceWithin();
+                $('#restAdded').html('<ul data-role="listview" data-icon="false" id="UsersList">'+htmlRest+'</ul><hr/>').enhanceWithin();
             }
         }
 
