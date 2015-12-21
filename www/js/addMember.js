@@ -40,6 +40,12 @@ var addMember = {
     addMember: function (tx) {
         var sql = "INSERT INTO usuarios (nombre, telefono, email, puesto, img) VALUES ('" + addMember.nombreApellidos + "', '" + addMember.telefono + "', '" + addMember.email + "', '" + addMember.puesto + "' , '" + addMember.img + "')";
         tx.executeSql(sql);
+
+        //Reseteamos valor 'ultimos' en los items
+        sql = "UPDATE usuarios SET ultimos = 0";
+        tx.executeSql(sql);
+        sql = "UPDATE usuarios SET ultimos = 1 WHERE id IN (SELECT id from usuarios ORDER BY id DESC LIMIT 3)";
+        tx.executeSql(sql);
     }
 
 
