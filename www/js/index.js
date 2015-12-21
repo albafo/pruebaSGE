@@ -71,7 +71,8 @@ var confDB = {
                 "email CHAR(100)  NOT NULL, "+
                 "puesto CHAR(20) NOT NULL, "+
                 "valoracion INT,"+
-                "img CHAR(255)"+
+                "img CHAR(255),"+
+                "ultimos INT"+
             ")"
         );
 
