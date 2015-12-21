@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>MiniCRM - by AlvaroBano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="vendor/waves/waves.min.css" />
+    <link rel="stylesheet" href="vendor/wow/animate.css" />
+    <link rel="stylesheet" href="css/nativedroid2.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+
+
+
+    <style>
+        /* Prevent FOUC */
+        body {
+            opacity: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<div data-role="page" class="nd2-no-menu-swipe">
+
+    <nd2-include data-src="menu/menu.html"></nd2-include>
+
+    <div data-role="header" data-position="fixed" class="wow fadeInDown" data-wow-delay="0.2s">
+        <a data-transition="slide" class="ui-btn-right" href="#" id="changePhoto"><i class="icon-camera fa fa-camera"></i></a>
+        <a data-transition="slide" href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
+
+        <h1 class="wow fadeIn" data-wow-delay='0.4s'>Nuevo miembro</h1>
+    </div>
+
+    <div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
+
+
+        <form>
+
+
+            <div class="row">
+
+
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="box">
+
+                        <label for="name2b">Nombre y apellidos:</label>
+                        <input type="text" name="name2" id="name2b" value="" data-clear-btn="true">
+
+                        <label for="inputEmail">Email:</label>
+                        <input type="email" name="inputEmail" id="inputEmail" value="" data-clear-btn="true"
+                               placeholder="">
+
+                        <label for="telf">Teléfono:</label>
+                        <input type="text" name="telf" id="telf" value="" data-clear-btn="true">
+
+                        <label for="puesto" class="select">Puesto</label>
+                        <select name="puesto" id="puesto" data-native-menu="false">
+                            <option value="SCRUM Manager">SCRUM Manager</option>
+                            <option value="Backend developer">Backend developer</option>
+                            <option value="Frontend developer">Frontend developer</option>
+                            <option value="Project Manager">Project Manager</option>
+                        </select>
+                        <input type="hidden" name="src-photo" id="srcPhoto" >
+
+
+
+                    </div>
+                    <button class="ui-btn" id="btnAddMember"><i class="zmdi zmdi-mail-send"></i> Generar miembro</button>
+
+
+                </div>
+
+            </div>
+
+        </form>
+
+
+    </div>
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/addMember.js"></script>
+<script src="vendor/waves/waves.min.js"></script>
+<script src="vendor/wow/wow.min.js"></script>
+<script src="js/nativedroid2.js"></script>
+<script src="nd2settings.js"></script>
+
+</body>
+</html>

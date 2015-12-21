@@ -1,0 +1,14 @@
+.ui-header a.ui-btn-right
+{
+    padding: 0;
+    width: 55px;
+    height: 55px;
+}
+.ui-header a .profile-thumbnail {
+
+    width: 100%;
+}
+
+.icon-camera {
+    margin-top: 17px;
+}
