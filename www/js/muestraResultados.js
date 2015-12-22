@@ -65,12 +65,15 @@ var muestraResultados = {
         });
     },
 
+    /*Rellena la ventana detalle de un item*/
     mostrarPerfil:function()
     {
         this.db.transaction(this.throwShowProfile, confDB.onErrorTransaction);
 
     },
 
+    /*Recibimos el id del usuario y lanzamos query para rellenar datos*/
+    //YA ESTABA IMPLEMENTADO ANTES
     throwShowProfile:function(tx)
     {
         var user_id = window.localStorage.getItem("user_id");
